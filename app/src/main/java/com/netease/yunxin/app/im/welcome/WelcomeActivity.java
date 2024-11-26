@@ -65,8 +65,8 @@ public class WelcomeActivity extends BaseActivity {
     ALog.d(Constant.PROJECT_TAG, TAG, "startLogin");
 
         //填入你的 account and token
-        String account = "";
-        String token = "";
+        String account = "test2";
+        String token = "testtest";
         if (!TextUtils.isEmpty(account) && !TextUtils.isEmpty(token)) {
             loginIM(account, token);
         } else {
@@ -86,8 +86,7 @@ public class WelcomeActivity extends BaseActivity {
         activityWelcomeBinding.vEmailLine.setVisibility(View.VISIBLE);
         activityWelcomeBinding.loginButton.setOnClickListener(
                 view -> {
-
-                    launchLoginPage();
+                    loginIM("test", "testtest");
                 });
         activityWelcomeBinding.tvEmailLogin.setOnClickListener(
                 view -> {

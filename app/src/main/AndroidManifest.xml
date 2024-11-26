@@ -57,7 +57,8 @@
         android:theme="@style/Theme.Xkit">
         <meta-data
             android:name="com.netease.nim.appKey"
-            android:value="appKey" />
+            android:value="8f1755824245ee54a387f8bb4c5c8a4f" />
+        <!--android:value="bb653da24a7f369e98f88c6d9ca77272" />-->
         <meta-data
             android:name="com.netease.nim.oversea.appKey"
             android:value="appKey" />

@@ -11,9 +11,9 @@
     android:orientation="vertical">
 
     <com.netease.yunxin.kit.chatkit.ui.normal.view.ChatView
-        android:id="@+id/chatView"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+      android:id="@+id/chatView"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent" />
 
     <FrameLayout android:id="@+id/chatInvalidTipLayout"
         android:layout_width="match_parent"
