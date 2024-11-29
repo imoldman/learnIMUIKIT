@@ -7,6 +7,7 @@
 package com.netease.yunxin.nertc.ui
 
 import android.content.Context
+import com.netease.yunxin.kit.call.group.param.GroupCallParam
 import com.netease.yunxin.kit.call.p2p.NECallEngine
 import com.netease.yunxin.kit.call.p2p.model.NECallPushConfig
 import com.netease.yunxin.kit.corekit.XKitService
@@ -15,9 +16,11 @@ import com.netease.yunxin.kit.corekit.model.ResultObserver
 import com.netease.yunxin.kit.corekit.route.XKitRouter
 import com.netease.yunxin.kit.corekit.startup.Initializer
 import com.netease.yunxin.nertc.nertcvideocall.model.impl.state.CallState
+import com.netease.yunxin.nertc.ui.CallKitUI.startGroupCall
 import com.netease.yunxin.nertc.ui.CallKitUI.startSingleCall
 import com.netease.yunxin.nertc.ui.base.CallParam
 import com.netease.yunxin.nertc.ui.base.Constants
+import java.util.UUID
 
 class CallKitUIService : XKitService {
 
@@ -79,29 +82,12 @@ class CallKitUIService : XKitService {
                         @Suppress("UNCHECKED_CAST")
                         val extrasMap =
                             params[Constants.KEY_CALL_PAGE_EXTRAS] as? MutableMap<String?, Any?>
-                        val param = CallParam.Builder()
-                            .callType(callerType)
-                            .callerAccId(callerID)
-                            .calledAccId(calledID).apply {
-                                if (extraInfo != null) {
-                                    callExtraInfo(extraInfo)
-                                }
-                                if (globalExtraCopy != null) {
-                                    globalExtraCopy(globalExtraCopy)
-                                }
-                                if (rtcChannelName != null) {
-                                    rtcChannelName(rtcChannelName)
-                                }
-                                if (pushConfig != null) {
-                                    pushConfig(pushConfig)
-                                }
-                                if (extrasMap != null) {
-                                    replaceAllExtras(extrasMap)
-                                }
-                            }
+                        val param = GroupCallParam.Builder()
+                            .callId(UUID.randomUUID().toString())
+                            .callees(calledID)
                             .build()
                         val page = params[XKitRouter.ActivityNavigator.PARAM_CONTEXT] as Context
-                        startSingleCall(page, param)
+                        startGroupCall(page, param)
                         return true
                     }
                 }

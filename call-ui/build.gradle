@@ -7,9 +7,14 @@ apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 
 android {
-    compileSdkVersion rootProject.ext.compileSdkVersion
-    buildToolsVersion rootProject.ext.buildToolsVersion
+    //compileSdkVersion rootProject.ext.compileSdkVersion
+    compileSdk = 33
+    // buildToolsVersion rootProject.ext.buildToolsVersion
 
+
+    defaultConfig {
+        minSdkVersion 24
+    }
 
     buildFeatures {
         viewBinding = true
@@ -17,21 +22,21 @@ android {
 }
 
 dependencies {
-    implementation("libs.coreKtx")
-    implementation(libs.kotlinxCoroutinesCore)
-    implementation(libs.kotlinxCoroutinesAndroid)
-    implementation(libs.appcompat)
-    implementation(libs.constraintlayout)
-    implementation(libs.material)
+    implementation("androidx.core:core-ktx:1.7.0")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.4")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.4")
+    implementation("androidx.appcompat:appcompat:1.4.2")
+    implementation("androidx.constraintlayout:constraintlayout:2.1.4")
+    implementation("com.google.android.material:material:1.5.0")
 
-    implementation(libs.alog)
-    implementation(libs.glide)
-    implementation(libs.recyclerview)
-    implementation(libs.lifecycleViewModelKtx)
+    implementation("com.netease.yunxin.kit:alog:1.1.0")
+    implementation("com.github.bumptech.glide:glide:4.13.1")
+    implementation("androidx.recyclerview:recyclerview:1.2.1")
+    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.4.1")
 
-    implementation (libs.lifecycleProcess)
-    implementation (libs.viewpager2)
+    implementation ("androidx.lifecycle:lifecycle-process:2.4.1")
+    implementation ("androidx.viewpager2:viewpager2:1.0.0")
 
-    implementation (libs.glideTransformations)
-    api (libs.call)
+    implementation ("jp.wasabeef:glide-transformations:4.3.0")
+    api ("com.netease.yunxin.kit.call:call:2.5.1")
 }

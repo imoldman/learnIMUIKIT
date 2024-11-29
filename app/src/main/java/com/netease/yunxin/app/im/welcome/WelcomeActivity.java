@@ -86,7 +86,7 @@ public class WelcomeActivity extends BaseActivity {
         activityWelcomeBinding.vEmailLine.setVisibility(View.VISIBLE);
         activityWelcomeBinding.loginButton.setOnClickListener(
                 view -> {
-                    loginIM("test", "testtest");
+                    loginIM("test2", "testtest");
                 });
         activityWelcomeBinding.tvEmailLogin.setOnClickListener(
                 view -> {

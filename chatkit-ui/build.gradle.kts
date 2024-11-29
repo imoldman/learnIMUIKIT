@@ -50,7 +50,8 @@ dependencies {
     implementation("com.google.android.material:material:1.5.0")
     implementation("androidx.recyclerview:recyclerview:1.2.1")
     implementation("com.airbnb.android:lottie:5.0.3")
-    implementation("com.github.bumptech.glide:glide:4.13.1") 
+    implementation("com.github.bumptech.glide:glide:4.13.1")
+    implementation("com.netease.yunxin.kit.call:call:2.5.1")
 
 }
 

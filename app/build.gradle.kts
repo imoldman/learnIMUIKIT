@@ -52,6 +52,7 @@ dependencies {
     implementation(project(":chatkit-ui"))
     implementation(project(":locationkit"))
     implementation(project(":aisearchkit"))
+    implementation(project(":call-ui"))
 
     //远端aar依赖
 //    implementation("com.netease.yunxin.kit.contact:contactkit-ui:10.3.2")
@@ -62,7 +63,7 @@ dependencies {
 //    implementation("com.netease.yunxin.kit.aisearchkit:aisearchkit:10.3.2")
 
 
-    implementation("com.netease.yunxin.kit.call:call-ui:2.2.0") //呼叫组件 UI 包
+//    implementation("com.netease.yunxin.kit.call:call-ui:2.2.0") //呼叫组件 UI 包
     implementation("com.netease.nimlib:avsignalling:10.3.0-beta") //信令组件
     implementation("com.airbnb.android:lottie:5.0.3")
     implementation("com.github.bumptech.glide:glide:4.13.1")

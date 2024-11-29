@@ -355,6 +355,7 @@ public class MainActivity extends BaseActivity {
             // 当结合其他组件使用时存在rtc初始化冲突可设置NECallInitRtcMode.IN_NEED
             // 或当结合其他组件使用时存在rtc初始化冲突可设置NECallInitRtcMode.IN_NEED_DELAY_TO_ACCEPT
             .initRtcMode(NECallInitRtcMode.GLOBAL)
+            .enableGroup(true)
             .build();
     // 设置自定义话单消息发送
     NECallEngine.sharedInstance().setCallRecordProvider(new CustomCallOrderProvider());
